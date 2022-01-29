@@ -14,6 +14,11 @@ class Student
     private string $name;
     private array $grades = [];
 
+    public function __construct(int $id, string $name)
+    {
+        $this->id = $id;
+        $this->name = $name;
+    }
 
     public function addGrade(int $grade)
     {
@@ -54,6 +59,6 @@ class Student
             throw new Exception('No grades entered');
         }
 
-        return $calculator->isPassed($this->grades) ? 'passed' : 'failed'; 
+        return $calculator->isPassed($this->grades) ? 'Pass' : 'Fail'; 
     }
 }
