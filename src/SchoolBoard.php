@@ -18,7 +18,7 @@ class SchoolBoard
         $this->outputFormatter = $f;
     }
 
-    public function getResults()
+    public function getResults(): string
     {
         return $this->outputFormatter->getFormated([
             'id' => $this->student->getID(),

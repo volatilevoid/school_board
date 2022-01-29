@@ -12,8 +12,9 @@ use Exception;
 class Input
 {
     /**
-     * Get request values
-     *
+     * GET request value
+     * 
+     * key === 'student'
      * @return integer Student ID
      */
     public static function get(): int

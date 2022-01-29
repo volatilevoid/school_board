@@ -60,7 +60,7 @@ class Student
         return $this->calculateAverage($this->grades);
     }
 
-    public function getFinalGrade(CalcFinalResultInterface $calculator)
+    public function getFinalGrade(CalcFinalResultInterface $calculator): string
     {
         if (count($this->grades) === 0) {
             throw new Exception('No grades entered');

@@ -13,6 +13,7 @@ class Database
         $this->connection = new PDO('sqlite:students.sqlite3');
     }
 
+    // Create table and mock data
     public function createTable()
     {
         $this->connection->setAttribute(
@@ -23,14 +24,14 @@ class Database
         $c = $this->connection->prepare("CREATE TABLE IF NOT EXISTS students (id integer primary key, name text, grades text, board text)");
 
         if ($c->execute()) {
-            echo 'Table Created';
+            echo "Table Created\n";
         } else {
-            echo 'not created';
+            echo "Table not created\n";
         }
         // Fill table
         $this->connection->exec("INSERT INTO `students` (`id`, `name`, `grades`, `board`) VALUES (1, 'Slavko', '7,5,7,9', 'csm'), (2, 'Mirko', '7,6,6,10', 'csm'), (3, 'Milutin', '7,6,7,6', 'csmb')");
     }
-
+    
     public function getStudent(int $id)
     {
         $query = $this->connection->prepare("SELECT * FROM students WHERE id = :id");
