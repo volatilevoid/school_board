@@ -41,11 +41,11 @@ class SchoolApp
                 );
             }
        
-            if (!is_null($schoolBoard)) {
-                return $schoolBoard->getResults();
-            } else {
+            if (is_null($schoolBoard)) {
                 throw new Exception('Unknown board');
             }
+
+            return $schoolBoard->getResults();
         
         } catch (\Exception $e) {
             echo $e->getMessage();
