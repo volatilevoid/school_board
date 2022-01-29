@@ -6,6 +6,12 @@ class SchoolApp
 {
     public static function run()
     {
-        var_dump(Input::get());
+        try {
+            Input::get();
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+        }
+
+        
     }
 }
