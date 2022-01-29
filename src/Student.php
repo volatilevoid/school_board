@@ -12,12 +12,14 @@ class Student
 
     private int $id;
     private string $name;
+    private string $board;
     private array $grades = [];
 
-    public function __construct(int $id, string $name)
+    public function __construct(int $id, string $name, string $board)
     {
         $this->id = $id;
         $this->name = $name;
+        $this->board = $board;
     }
 
     public function addGrade(int $grade)
@@ -37,6 +39,11 @@ class Student
     public function getName(): string
     {
         return $this->name;
+    }
+
+    public function getBoard(): string
+    {
+        return $this->board;
     }
 
     public function getAllGrades(): array
